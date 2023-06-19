@@ -18,6 +18,9 @@ class TestStateCreation(unittest.TestCase):
         self.cursor.execute('SELECT COUNT(*) FROM TABLES')
         initial_count = self.cursor.fetchone()[0]
 
+        command = 'create State name="California"'
+        result = subprocess.run(['python', 'console.py', command], capture_output=True, text=True)
+
         self.cursor.execute('SELECT COUNT(*) FROM states')
         updated_count = self.cursor.fetchone()[0]
 

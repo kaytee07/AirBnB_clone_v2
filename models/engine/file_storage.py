@@ -67,7 +67,6 @@ class FileStorage:
         for key, value in self.__objects.items():
             cls_id = key.split('.')
             id = cls_id[1]
-            print(id + ' iamid')
             if obj.id == id:
                 keys_to_delete.append(key)
 

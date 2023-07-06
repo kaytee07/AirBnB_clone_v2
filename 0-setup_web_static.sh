@@ -5,7 +5,7 @@
 if ! command -v "nginx" >/dev/null;
 then
     sudo apt update
-    sudo apt install nginx
+    sudo apt install -y nginx
 fi
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
@@ -56,6 +56,3 @@ printf %s "server {
 }" > /etc/nginx/sites-available/default
 
 sudo service nginx restart
-
-    
-    

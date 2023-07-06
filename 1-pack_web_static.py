@@ -14,8 +14,9 @@ def do_pack():
     try:
         local("mkdir -p versions")
         local("tar -czvf {} web_static".format(archive_path))
-        print("web_static packed: {} -> {}Bytes"
-              .format(archive_path, local("wc -c {}".format(archive_path), capture=True)))
+        print("web_static packed: {} -> {}Bytes".
+              format(archive_path, local
+                     ("wc -c {}".format(archive_path), capture=True)))
         return archive_path
     except Exception as e:
         print("Error packing web_static: {}".format(str(e)))

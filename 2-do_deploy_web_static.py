@@ -1,10 +1,13 @@
+#!/usr/bin/python3
+# display and distribute archive to webservers
+
 from fabric.api import run, env, put
 import os
 
 
-env.hosts = ['xx-web-01', 'xx-web-02']  # Replace with your web server names
-env.user = 'your-username'  # Replace with your SSH username
-env.key_filename = 'path-to-your-ssh-key'  # Replace with the path to your SSH key
+env.hosts = ['52.204.97.16', '52.87.212.95']
+env.user = 'ubuntu'
+env.key_filename = '~/.ssh/id_rsa'
 
 
 def do_deploy(archive_path):

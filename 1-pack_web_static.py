@@ -17,12 +17,11 @@ def do_pack():
 
     try:
         os.makedirs(versions_directory, exist_ok=True)
-        local("tar -czvf {} web_static".format(archive_path1))
+        local("tar -czvf {} web_static".format(archive_path))
         archive_size = os.path.getsize(archive_path)
 
         print("web_static packed: {} -> {}Bytes"
               .format(archive_path, archive_size))
         return archive_path
     except Exception as e:
-        print("Error packing web_static: {}".format(str(e)))
         return None

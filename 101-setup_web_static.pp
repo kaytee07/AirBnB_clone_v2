@@ -7,31 +7,15 @@ $nginx_conf = "server {
     add_header X-Served-By ${hostname};
     root   /var/www/html;
     index  index.html index.htm;
-
     location /hbnb_static {
         alias /data/web_static/current;
         index index.html index.htm;
     }
-
     location /redirect_me {
-        return 301 http://cuberule.com/;
+        return 301 https://th3-gr00t.tk;
     }
-
     error_page 404 /404.html;
-    location /40tent => "Holberton School Puppet\n"
-} ->
-
-file { '/data/web_static/current':
-  ensure => 'link',
-  target => '/data/web_static/releases/test'
-} ->
-
-exec { 'chown -R ubuntu:ubuntu /data/':
-  path => '/usr/bin/:/usr/local/bin/:/bin/'
-}
-
-file { '/var/www':
-  4 {
+    location /404 {
       root /var/www/html;
       internal;
     }
@@ -64,7 +48,20 @@ file { '/data/web_static/shared':
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
-  conensure => 'directory'
+  content => "Holberton School Puppet\n"
+} ->
+
+file { '/data/web_static/current':
+  ensure => 'link',
+  target => '/data/web_static/releases/test'
+} ->
+
+exec { 'chown -R ubuntu:ubuntu /data/':
+  path => '/usr/bin/:/usr/local/bin/:/bin/'
+}
+
+file { '/var/www':
+  ensure => 'directory'
 } ->
 
 file { '/var/www/html':

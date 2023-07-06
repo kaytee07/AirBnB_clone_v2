@@ -18,7 +18,8 @@ def do_deploy(archive_path):
     try:
         archive_name = os.path.basename(archive_path)
         archive_base_name = os.path.splitext(archive_name)[0]
-        releases_path = "/data/web_static/releases/{}/".format(archive_base_name)
+        releases_path = "/data/web_static/releases/{}/".format
+        (archive_base_name)
 
         # Upload the archive to /tmp/ directory on the web servers
         put(archive_path, "/tmp/")

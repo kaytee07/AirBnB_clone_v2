@@ -22,7 +22,6 @@ printf %s "<html> \n
 " > /data/web_static/releases/test/index.html
 
 sudo rm -rf /data/web_static/current
-sudo mkdir /data/web_static/current
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 chown -R ubuntu /data/

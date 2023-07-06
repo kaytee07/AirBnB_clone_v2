@@ -11,7 +11,7 @@ sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared/
 
 
-echo "<html> \n
+printf %s "<html> \n
 <head> \n
 <title>Taylor</title> \n
 </head> \n

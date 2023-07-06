@@ -13,14 +13,15 @@ def do_pack():
     archive_path = "versions/{}".format(archive_name)
     current_directory = os.getcwd()
     versions_directory = os.path.join(current_directory, "versions")
-    archive_path = os.path.join(versions_directory, archive_name)
+    archive_path1 = os.path.join(versions_directory, archive_name)
 
     try:
         os.makedirs(versions_directory, exist_ok=True)
-        local("tar -czvf {} web_static".format(archive_path))
+        local("tar -czvf {} web_static".format(archive_path1))
+        archive_size = os.path.getsize(archive_path)
+
         print("web_static packed: {} -> {}Bytes"
-              .format(archive_path,
-                      local("wc -c {}".format(archive_path), capture=True)))
+              .format(archive_path, archive_size))
         return archive_path
     except Exception as e:
         print("Error packing web_static: {}".format(str(e)))

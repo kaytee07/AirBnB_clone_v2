@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """
 from the route we display the value assigned to the text variable
 and assign a default value of "is cool"

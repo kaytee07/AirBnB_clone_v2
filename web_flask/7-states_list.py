@@ -3,7 +3,7 @@
 web application listening on port 5000
 /states_list: display a HTML page: (inside the tag BODY)
 H1 tag: "States"
-UL tag: with the list of all State objects present in DBStorage 
+UL tag: with the list of all State objects present in DBStorage
 sorted by name (A->Z) tip
 LI tag: description of one State: <state.id>: <B><state.name></B>
 """
@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route("/states_list", strict_slashes=False)
 def states_list():
-    """Displays an HTML page with a list of all State objects 
+    """Displays an HTML page with a list of all State objects
     in DBStorage.
     States are sorted by name.
     """

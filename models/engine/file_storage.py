@@ -72,3 +72,7 @@ class FileStorage:
 
         for key in keys_to_delete:
             del self.__objects[key]
+
+    def close(self):
+        """ calls reload """
+        self.reload()
